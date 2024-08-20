@@ -22,8 +22,8 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
 			>
 				{/* Wave Background */}
 				<div
-					className="absolute inset-x-0 top-0 h-24 bg-indigo-100"
-					style={{ clipPath: "polygon(0 0, 100% 0, 100% 50%, 0% 100%)" }}
+					className="absolute inset-x-0 top-0 h-40 bg-indigo-100 w-full "
+					style={{ clipPath: "circle(73.6% at 50% 2%)" }}
 				></div>
 
 				{/* Top Voice Badge */}
@@ -41,13 +41,13 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
 				)}
 
 				{/* Profile Image */}
-				<div className="relative mt-12">
+				<div className="relative mt-12 ">
 					<Image
 						src="/logo/card-photo.avif"
 						alt={name}
-						height={150}
-						width={150}
-						className="rounded-full mx-auto mb-4 relative z-10"
+						height={140}
+						width={140}
+						className="rounded-full mx-auto mb-4 relative z-10 border-8 border-white"
 					/>
 				</div>
 
