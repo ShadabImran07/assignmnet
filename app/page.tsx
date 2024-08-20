@@ -40,7 +40,7 @@ const Home: NextPage = () => {
 	React.useEffect(() => {
 		const init = async () => {
 			setIsLoading(true);
-			const res = await fetch(`http://localhost:3000/api/experts`, {
+			const res = await fetch(`/api/experts`, {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
