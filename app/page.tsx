@@ -40,7 +40,7 @@ const Home: NextPage = () => {
 	React.useEffect(() => {
 		const init = async () => {
 			setIsLoading(true);
-			const res = await fetch(`/api/experts`, {
+			const res = await fetch("/api/experts", {
 				method: "POST",
 				headers: {
 					"Content-Type": "application/json",
@@ -80,14 +80,14 @@ const Home: NextPage = () => {
 				<NavBar />
 				<Header />
 
-				<div className="container flex justify-end items-center mt-5 mx-auto">
+				<div className="container flex justify-end items-center mt-5 mx-auto px-4 sm:px-6 lg:px-8">
 					<SearchBar
 						name={name}
 						setName={setName}
 					/>
 				</div>
 
-				<div className="container mx-auto flex py-4">
+				<div className="container mx-auto flex flex-col lg:flex-row py-4 px-4 sm:px-6 lg:px-8">
 					<Filter
 						setCategory={setCategory}
 						setExperience={setExperience}
@@ -98,20 +98,20 @@ const Home: NextPage = () => {
 						priceRange={priceRange}
 						rating={rating}
 					/>
-					<div className="w-3/4 pl-12">
+					<div className="w-full lg:w-3/4 lg:pl-12 mt-4 lg:mt-0">
 						{isLoading ? (
 							<ShimmerLoader />
 						) : data.length > 0 ? (
 							<ExpertList data={data} />
 						) : (
-							<div className="font-bold text-purple-700 text-center mt-6">
+							<div className="font-bold text-purple-700 text-center mt-6 flex justify-center items-center">
 								No Result Found
 							</div>
 						)}
 					</div>
 				</div>
 
-				<div className="py-4">
+				<div className="py-4 px-4 sm:px-6 lg:px-8">
 					<Pagination
 						currentPage={page}
 						totalPages={totalPages}

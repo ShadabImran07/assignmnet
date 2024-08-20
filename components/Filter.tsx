@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-
 import Slider from "react-slider";
+
 interface filterProps {
 	setCategory: React.Dispatch<React.SetStateAction<string[]>>;
 	setExperience: React.Dispatch<React.SetStateAction<string[]>>;
@@ -30,6 +30,7 @@ const Filter: React.FC<filterProps> = ({
 		setValues(newValues);
 		setPriceRange(newValues);
 	};
+
 	const handleCheckboxChange = (category: string) => {
 		setCategory(
 			(prevState) =>
@@ -38,6 +39,7 @@ const Filter: React.FC<filterProps> = ({
 					: [...prevState, category] // Add category if not selected
 		);
 	};
+
 	const handleExperienceChange = (experience: string) => {
 		setExperience(
 			(prevState) =>
@@ -46,6 +48,7 @@ const Filter: React.FC<filterProps> = ({
 					: [...prevState, experience] // Add category if not selected
 		);
 	};
+
 	const handleRatingChange = (rating: number) => {
 		setRating(
 			(prevState) =>
@@ -54,15 +57,16 @@ const Filter: React.FC<filterProps> = ({
 					: [...prevState, rating] // Add category if not selected
 		);
 	};
+
 	const percentage = (value: number) => ((value - min) / (max - min)) * 100;
+
 	const getLabelPositionStyle = (value: number) => ({
-		left: ` ${percentage(value)}%`,
+		left: `${percentage(value)}%`,
 		transform: "translateX(-50%)",
 	});
 
-	console.log("Pricerange", priceRange);
 	return (
-		<aside className="w-1/4 p-4 bg-white shadow-lg rounded-lg text-black divide-y divide-gray-300 h-[40%]">
+		<aside className="w-full md:w-1/4 p-4 bg-white shadow-lg rounded-lg text-black divide-y divide-gray-300 h-auto md:h-[40%]">
 			<h2 className="text-xl font-bold mb-4">Filter</h2>
 			{/* Categories */}
 			<div className="py-4">
@@ -126,9 +130,12 @@ const Filter: React.FC<filterProps> = ({
 									...props.style,
 									background: `linear-gradient(
                   to right,
+                  #e5e7eb 0%,
                   #e5e7eb ${percentage(values[0])}%,
-                  #7c3aed ${percentage(values[0])}% ${percentage(values[1])}%,
-                  #e5e7eb ${percentage(values[1])}%
+                  #7c3aed ${percentage(values[0])}%,
+                  #7c3aed ${percentage(values[1])}%,
+                  #e5e7eb ${percentage(values[1])}%,
+                  #e5e7eb 100%
                 )`,
 								}}
 							/>
@@ -164,7 +171,6 @@ const Filter: React.FC<filterProps> = ({
 									checked={rating.includes(stars)}
 									onChange={() => handleRatingChange(stars)}
 								/>
-
 								<div className="flex">
 									{[...Array(5)].map((_, i) => (
 										<svg

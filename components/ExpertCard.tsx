@@ -18,17 +18,17 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
 	return (
 		<>
 			<div
-				className={`relative rounded-lg shadow-md p-6 bg-white ${colorClass} overflow-hidden`}
+				className={`relative rounded-lg shadow-md p-4 sm:p-6 bg-white ${colorClass} overflow-hidden`}
 			>
 				{/* Wave Background */}
 				<div
-					className="absolute inset-x-0 top-0 h-40 bg-indigo-100 w-full "
+					className="absolute inset-x-0 top-0 h-46 sm:h-40 bg-indigo-100 w-full"
 					style={{ clipPath: "circle(73.6% at 50% 2%)" }}
 				></div>
 
 				{/* Top Voice Badge */}
 				{topVoice && (
-					<div className="absolute top-4 left-4 bg-purple-100 text-purple-800 px-3 py-1 rounded-full text-sm font-semibold flex items-center gap-1 z-10">
+					<div className="absolute top-4 left-4 bg-purple-100 text-purple-800 px-2 sm:px-3 py-1 rounded-full text-xs sm:text-sm font-semibold flex items-center gap-1 z-10">
 						<Image
 							src="/logo/start.png"
 							alt="star"
@@ -41,25 +41,29 @@ const ExpertCard: React.FC<ExpertCardProps> = ({
 				)}
 
 				{/* Profile Image */}
-				<div className="relative mt-12 ">
+				<div className="relative mt-10 sm:mt-12">
 					<Image
 						src="/logo/card-photo.avif"
 						alt={name}
-						height={140}
-						width={140}
+						height={120}
+						width={120}
 						className="rounded-full mx-auto mb-4 relative z-10 border-8 border-white"
 					/>
 				</div>
 
 				{/* Name and Position */}
-				<h2 className="text-lg font-semibold text-gray-600 text-center mb-2">
+				<h2 className="text-base sm:text-lg font-semibold text-gray-600 text-center mb-2">
 					{name}
 				</h2>
-				<p className="text-sm text-center text-gray-600 mb-4">{position}</p>
+				<p className="text-xs sm:text-sm text-center text-gray-600 mb-4">
+					{position}
+				</p>
 
 				{/* Experience */}
-				<div className="border border-gray-700 rounded-full p-2 mx-10">
-					<p className="text-center text-gray-600 text-sm">{experience}</p>
+				<div className="border border-gray-700 rounded-full p-1 sm:p-2 mx-6 sm:mx-10">
+					<p className="text-center text-gray-600 text-xs sm:text-sm">
+						{experience}
+					</p>
 				</div>
 
 				{/* Know More Button */}

@@ -4,15 +4,15 @@ const Footer = () => {
 	return (
 		<>
 			<footer className="bg-white text-gray-600 p-4 mt-4">
-				<div className="container mx-auto flex justify-between">
-					<div className="w-1/3">
+				<div className="container mx-auto grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-4">
+					<div className="w-full">
 						<h4 className="font-bold text-xl text-purple-700">E-NEST</h4>
 						<p>
 							Empowering Agri <br />
 							and food technology
 						</p>
 					</div>
-					<div className="w-1/3">
+					<div className="w-full">
 						<h4 className="font-bold text-purple-700">Quick Link</h4>
 						<ul className="gap-2">
 							<li>Program</li>
@@ -22,7 +22,7 @@ const Footer = () => {
 							<li>Study Abroad</li>
 						</ul>
 					</div>
-					<div className="w-1/3">
+					<div className="w-full">
 						<h4 className="font-bold text-purple-700">Company</h4>
 						<ul>
 							<li>About us</li>
@@ -31,7 +31,7 @@ const Footer = () => {
 							<li>Privacy Policy</li>
 						</ul>
 					</div>
-					<div className="w-1/3">
+					<div className="w-full">
 						<h4 className="font-bold text-purple-700">Security</h4>
 						<ul>
 							<li>Report</li>
@@ -40,7 +40,7 @@ const Footer = () => {
 							<li>Help & Support</li>
 						</ul>
 					</div>
-					<div className="w-1/3">
+					<div className="w-full">
 						<h4 className="font-bold text-purple-700">Incubated by</h4>
 						<ul>
 							<li>MSME</li>
